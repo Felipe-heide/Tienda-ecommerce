@@ -159,8 +159,8 @@ router.post('/', async (request, response) => {
           }
         })
       ),
-      success_url: process.env.ROUTE+"/success",
-      cancel_url: process.env.ROUTE+"/failed",
+      success_url: "/success",
+      cancel_url: "/failed",
     });
     
     response.json({ url: session.url });

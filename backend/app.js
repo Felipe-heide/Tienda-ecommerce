@@ -9,9 +9,9 @@ const orderRoutes = require('./controllers/order')
 const cors = require('cors');
 const { requestLogger, unknownEndpoint } = require('./middleware/middleware')
 
-app.use(cors({
-  origin: 'http://localhost:5173'
-}));
+app.use(express.static('dist'))
+
+app.use(cors());
 app.use('/api/orders/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json())
 
