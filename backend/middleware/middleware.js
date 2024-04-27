@@ -6,14 +6,9 @@ const requestLogger = (request, response, next) => {
     next()
   }
   
-  const unknownEndpoint = (req, res) => {
-    if (req.path.startsWith('/api')) {
-      res.status(404).send({ error: 'Unknown endpoint' });
-    } else {
-      res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
-    }
-  };
-  
+  const unknownEndpoint = (request, response) => {
+    response.status(404).send({ error: 'unknown endpoint' })
+  }
   
   module.exports = {
     requestLogger,
