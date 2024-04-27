@@ -9,7 +9,6 @@ const orderRoutes = require('./controllers/order')
 const cors = require('cors');
 const { requestLogger, unknownEndpoint } = require('./middleware/middleware')
 
-app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static('dist'))
 
 app.use(cors());
