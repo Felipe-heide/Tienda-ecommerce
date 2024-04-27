@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs')
 const Product = require('../models/product')
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
 
