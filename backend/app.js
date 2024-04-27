@@ -29,12 +29,5 @@ app.use('/api/login', loginRoutes)
 app.use('/api/products', productRoutes)
 app.use('/api/orders', orderRoutes)
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
-
-
-
-
 app.use(unknownEndpoint)
 module.exports = app
