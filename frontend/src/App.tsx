@@ -52,6 +52,7 @@ const App = () => {
         <Route path="/account" element={<Account />} />
         <Route path="/success" element={<Succes />} />
         <Route path="/failed" element={<Fail />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   )
