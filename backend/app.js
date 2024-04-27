@@ -9,6 +9,7 @@ const orderRoutes = require('./controllers/order')
 const cors = require('cors');
 const { requestLogger, unknownEndpoint } = require('./middleware/middleware')
 
+app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static('dist'))
 
 app.use(cors());
@@ -29,6 +30,9 @@ app.use('/api/login', loginRoutes)
 app.use('/api/products', productRoutes)
 app.use('/api/orders', orderRoutes)
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 
 
