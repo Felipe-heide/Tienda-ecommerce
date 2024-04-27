@@ -159,8 +159,8 @@ router.post('/', async (request, response) => {
           }
         })
       ),
-      success_url: "/success",
-      cancel_url: "/failed",
+      success_url: "https://tienda-ecommerce-so3w.onrender.com/success",
+      cancel_url: "https://tienda-ecommerce-so3w.onrender.com/failed",
     });
     
     response.json({ url: session.url });
