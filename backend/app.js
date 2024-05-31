@@ -8,8 +8,7 @@ const productRoutes = require('./controllers/product')
 const orderRoutes = require('./controllers/order')
 const cors = require('cors');
 const { requestLogger, unknownEndpoint } = require('./middleware/middleware')
-
-app.use(express.static('dist'))
+const path = require('path') // Import the path module
 
 app.use(cors());
 app.use('/api/orders/webhook', express.raw({ type: 'application/json' }));
@@ -28,6 +27,12 @@ app.use('/api/users', userRoutes)
 app.use('/api/login', loginRoutes)
 app.use('/api/products', productRoutes)
 app.use('/api/orders', orderRoutes)
+
+app.use(express.static('dist'))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
 
 app.use(unknownEndpoint)
 module.exports = app

@@ -36,7 +36,7 @@ const App = () => {
   const isMobileWidth = windowWidth < 1300;
 
   if (isMobileWidth) {
-    alert('This website is not accessible on small screens.');
+    alert('This website is not accessible on small screens YET');
     window.open("about:blank", "_self");
     window.close();
 
