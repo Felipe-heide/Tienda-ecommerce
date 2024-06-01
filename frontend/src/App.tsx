@@ -33,7 +33,7 @@ const App = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const isMobileWidth = windowWidth < 1300;
+  const isMobileWidth = windowWidth < 950;
 
   if (isMobileWidth) {
     alert('This website is not accessible on small screens YET');
